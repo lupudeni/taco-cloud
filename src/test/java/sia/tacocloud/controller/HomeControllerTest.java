@@ -9,7 +9,7 @@ import static org.hamcrest.Matchers.containsString;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
-@WebMvcTest(HomeController.class)
+@WebMvcTest()
 //* arranges for the test to run in the context of a Spring MVC app. Requests can be thrown at it
 public class HomeControllerTest {
 
