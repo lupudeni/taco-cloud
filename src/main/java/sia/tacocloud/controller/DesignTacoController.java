@@ -30,8 +30,8 @@ public class DesignTacoController {
     private final IngredientRepository ingredientRepository;
 
     @Autowired
-    public DesignTacoController(JdbcIngredientRepository jdbcIngredientRepository) {
-        this.ingredientRepository = jdbcIngredientRepository;
+    public DesignTacoController(IngredientRepository ingredientRepository) {
+        this.ingredientRepository = ingredientRepository;
     }
 
     //? all this logic should be in the service. Hope it moves when we get there
