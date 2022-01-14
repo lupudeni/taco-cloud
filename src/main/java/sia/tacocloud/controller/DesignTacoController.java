@@ -9,7 +9,6 @@ import org.springframework.web.bind.annotation.*;
 import sia.tacocloud.domain.Ingredient;
 import sia.tacocloud.domain.Taco;
 import sia.tacocloud.repository.ingredient.IngredientRepository;
-import sia.tacocloud.repository.ingredient.JdbcIngredientRepository;
 
 import javax.validation.Valid;
 import java.util.List;

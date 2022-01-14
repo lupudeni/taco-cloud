@@ -2,6 +2,8 @@ package sia.tacocloud.domain;
 
 import lombok.Data;
 import org.hibernate.validator.constraints.CreditCardNumber;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.relational.core.mapping.Table;
 
 import javax.validation.constraints.Digits;
 import javax.validation.constraints.NotBlank;
@@ -12,10 +14,12 @@ import java.util.Date;
 import java.util.List;
 //* domain objects may carry logic. If no logic is in them however, they can be the same as a DTO
 @Data
+@Table //* this is optional. It maps directly to table Taco_Order. However, if the table you are mapping to has a different name, specify in the arguments of this annotation
 public class TacoOrder implements Serializable {
 
    private static final long serialVersionUID = 1L;
 
+   @Id //* the identity of TacoOrder. Has to be unique
    private Long id;
 
    private Date placedAt;
