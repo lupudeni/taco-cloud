@@ -26,30 +26,13 @@ public class DesignTacoController {
 
     private static final String DESIGN = "design";
 
-    private final IngredientRepository ingredientRepository;
-
     @Autowired
-    public DesignTacoController(IngredientRepository ingredientRepository) {
-        this.ingredientRepository = ingredientRepository;
-    }
+    private  IngredientRepository ingredientRepository;
 
-    //? all this logic should be in the service. Hope it moves when we get there
     @ModelAttribute
     public void addIngredientsToModel(Model model) {
-//        List<Ingredient> ingredients = Arrays.asList(
-//                new Ingredient("FLTO", "Flour Tortilla", Type.WRAP),
-//                new Ingredient("COTO", "Corn Tortilla", Type.WRAP),
-//                new Ingredient("GRBF", "Ground Beef", Type.PROTEIN),
-//                new Ingredient("CARN", "Carnitas", Type.PROTEIN),
-//                new Ingredient("TMTO", "Diced Tomatoes", Type.VEGGIES),
-//                new Ingredient("LETC", "Lettuce", Type.VEGGIES),
-//                new Ingredient("CHED", "Cheddar", Type.CHEESE),
-//                new Ingredient("JACK", "Monterry Jack", Type.CHEESE),
-//                new Ingredient("SLSA", "Salsa", Type.SAUCE),
-//                new Ingredient("SRCR", "Sour Cream", Type.SAUCE)
-//        );
 
-        List<Ingredient> ingredients = ingredientRepository.findAll();
+        List<Ingredient> ingredients = (List<Ingredient>) ingredientRepository.findAll();
 
         Type[] types = Ingredient.Type.values();
         for (Type type : types) {
@@ -70,7 +53,7 @@ public class DesignTacoController {
             return DESIGN;
         }
 
-        // todo save the taco... (chapter 3)
+        // TODO save the taco... (chapter 3)
         log.info("Processing taco: " + taco.getName());
         return "redirect:/orders/current";
     }

@@ -6,12 +6,14 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.Id;
 
 @Data
 @AllArgsConstructor
-@NoArgsConstructor(access = AccessLevel.PUBLIC, force = true)
-//* access level for generated methods and fields. All are now private
+@NoArgsConstructor(access = AccessLevel.PRIVATE, force = true)
+// * access level for generated methods and fields. All are now private
 // * @NoArgsConstructor will generate a constructor with no parameters. If this is not possible (because of final fields),
 // * a compiler error will result instead, unless @NoArgsConstructor(force = true) is used,
 // * then all final fields are initialized with 0 / false / null
@@ -25,6 +27,8 @@ public class Ingredient {
 
     private final String name;
 
+    // * @Enumerated is used with the EnumType in order to map the value in db (String in this case) to the Enum used in app
+    @Enumerated(EnumType.STRING)
     private final Type type;
 
     public enum Type {

@@ -34,4 +34,9 @@ public class Taco {
     //* A Taco can have many Ingredient objects,
     //* and an Ingredient can be a part of many Taco s.
     private List<Ingredient> ingredients;
+
+    //TODO move this in the service after issue is fixed
+    public void addIngredient(Ingredient ingredient) {
+        this.ingredients.add(ingredient);
+    }
 }

@@ -1,5 +1,5 @@
 package sia.tacocloud.domain;
-
+//TODO: create a visual representation of the tables for the read me file
 import lombok.Data;
 import org.hibernate.validator.constraints.CreditCardNumber;
 
