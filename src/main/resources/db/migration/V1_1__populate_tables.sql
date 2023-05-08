@@ -18,3 +18,6 @@ insert into Ingredient (id, name, type)
 values ('SLSA', 'Salsa', 'SAUCE');
 insert into Ingredient (id, name, type)
 values ('SRCR', 'Sour Cream', 'SAUCE');
+
+INSERT INTO User (id, username, password, fullname, street, city,state, zip, phone_number)
+VALUES (1, 'user', '$2a$12$lnX7hFi8J.YZ31H.58ivUu1PmbDoSNyeGvjds9kUCwsdx3prHYUmK', 'name', 'street', 'city', 'xx', '12345', '1234567890');

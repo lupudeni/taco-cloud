@@ -17,5 +17,8 @@ public class WebConfig implements WebMvcConfigurer {
         //* activate this view controller. (it only gets stuff)
         //* .setViewName(Path.HOME) we set the name of the html view where you will be redirected on /
         //* this creates a view only controller for the homepage. no need to a HomeController anymore
+        registry.addViewController("/login");
     }
+
+
 }

@@ -1,11 +1,13 @@
-package sia.tacocloud.repository.order;
+package sia.tacocloud.repository;
 
 import org.springframework.data.repository.CrudRepository;
+import org.springframework.stereotype.Repository;
 import sia.tacocloud.domain.TacoOrder;
 
 import java.util.Date;
 import java.util.List;
 
+@Repository
 public interface OrderRepository extends CrudRepository<TacoOrder, Long> {
 
     //* Spring Data defines a sort of miniature domain-specific language (DSL) where persistence details are expressed in

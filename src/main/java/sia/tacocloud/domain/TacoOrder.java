@@ -1,12 +1,9 @@
 package sia.tacocloud.domain;
-//TODO: create a visual representation of the tables for the read me file
 import lombok.Data;
+import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.validator.constraints.CreditCardNumber;
 
-import javax.persistence.CascadeType;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.OneToMany;
+import javax.persistence.*;
 import javax.validation.constraints.Digits;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Pattern;
@@ -22,9 +19,11 @@ public class TacoOrder implements Serializable {
 
    private static final long serialVersionUID = 1L;
 
-   @Id //* the identity of TacoOrder. Has to be unique
+   @Id
+   @GeneratedValue(strategy = GenerationType.IDENTITY)//* the identity of TacoOrder. Has to be unique
    private Long id;
 
+   @CreationTimestamp //* date will be automatically generated for the db
    private Date placedAt;
 
    @NotBlank(message = "Delivery name is required") //* The annotated element must not be null and must contain at least one non-whitespace character
@@ -48,9 +47,9 @@ public class TacoOrder implements Serializable {
    @Pattern(regexp="^(0[1-9]|1[0-2])([\\/])([1-9][0-9])$",
            message="Must be formatted MM/YY")
    private String ccExpiration;
-
+//* needless to say, storing data like this is not the correct way to go as to data privacy. Here it is used only as per example of applying validations and populating tables
    @Digits(integer = 3, fraction = 0, message = "Invalid CVV")
-   private String ccCVV;
+   private String ccCvv;
 
    @OneToMany (cascade = CascadeType.ALL)
    //* One TacoOrder can have Many Tacos
@@ -59,7 +58,12 @@ public class TacoOrder implements Serializable {
    //*** OneToMany -> One represents the parent. All operations are propagated to its children. Which is the correct approach.
    private List<Taco> tacos = new ArrayList<>();
 
+   @ManyToOne
+   @JoinColumn(name = "user_id")
+   private User user;
+
    public void addTaco(Taco taco) {
        this.tacos.add(taco);
    }
+
 }

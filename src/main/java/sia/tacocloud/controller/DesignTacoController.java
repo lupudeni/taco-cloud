@@ -8,7 +8,7 @@ import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.*;
 import sia.tacocloud.domain.Ingredient;
 import sia.tacocloud.domain.Taco;
-import sia.tacocloud.repository.ingredient.IngredientRepository;
+import sia.tacocloud.repository.IngredientRepository;
 
 import javax.validation.Valid;
 import java.util.List;
@@ -53,7 +53,6 @@ public class DesignTacoController {
             return DESIGN;
         }
 
-        // TODO save the taco... (chapter 3)
         log.info("Processing taco: " + taco.getName());
         return "redirect:/orders/current";
     }
