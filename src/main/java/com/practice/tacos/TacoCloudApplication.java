@@ -1,4 +1,4 @@
-package com.practice.taco_cloud;
+package com.practice.tacos;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
