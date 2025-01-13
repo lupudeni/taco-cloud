@@ -1,4 +1,4 @@
-package com.practice.tacos;
+package com.practice.tacos.controller;
 
 import org.hamcrest.Matchers;
 import org.junit.jupiter.api.Test;
