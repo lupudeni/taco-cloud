@@ -45,7 +45,7 @@ public class DesignTacoController {
         return "design";
     }
 
-    @PostMapping 
+    @PostMapping
     public String processTaco(Taco taco, @ModelAttribute TacoOrder tacoOrder) {
         tacoOrder.addTaco(taco);
         log.info("Processing taco: {}", taco);
