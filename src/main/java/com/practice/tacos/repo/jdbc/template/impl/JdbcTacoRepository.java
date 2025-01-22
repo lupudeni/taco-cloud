@@ -1,8 +1,8 @@
-package com.practice.tacos.repo.impl;
+package com.practice.tacos.repo.jdbc.template.impl;
 
 import com.practice.tacos.domain.Taco;
-import com.practice.tacos.repo.IngredientRepository;
-import com.practice.tacos.repo.TacoRepository;
+import com.practice.tacos.repo.jdbc.template.IngredientRepository;
+import com.practice.tacos.repo.jdbc.template.TacoRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.asm.Type;
 import org.springframework.jdbc.core.JdbcOperations;

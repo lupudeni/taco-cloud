@@ -1,8 +1,8 @@
-package com.practice.tacos.repo.impl;
+package com.practice.tacos.repo.jdbc.template.impl;
 
 import com.practice.tacos.domain.TacoOrder;
-import com.practice.tacos.repo.OrderRepository;
-import com.practice.tacos.repo.TacoRepository;
+import com.practice.tacos.repo.jdbc.template.OrderRepository;
+import com.practice.tacos.repo.jdbc.template.TacoRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.jdbc.core.JdbcOperations;

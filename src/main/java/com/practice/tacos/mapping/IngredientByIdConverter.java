@@ -1,7 +1,7 @@
 package com.practice.tacos.mapping;
 
 import com.practice.tacos.domain.Ingredient;
-import com.practice.tacos.repo.IngredientRepository;
+import com.practice.tacos.repo.jdbc.data.IngredientRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.core.convert.converter.Converter;
 import org.springframework.stereotype.Component;
@@ -10,8 +10,10 @@ import org.springframework.stereotype.Component;
 @RequiredArgsConstructor
 public class IngredientByIdConverter implements Converter<String, Ingredient> {
 
-    private final IngredientRepository ingredientRepository;
+    // Used with JDBC Template package
+//    private final IngredientRepository ingredientRepository;
 
+    private final IngredientRepository ingredientRepository;
 
     @Override
     public Ingredient convert(String id) {

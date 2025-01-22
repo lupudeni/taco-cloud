@@ -1,4 +1,4 @@
-package com.practice.tacos.repo;
+package com.practice.tacos.repo.jdbc.template;
 
 import com.practice.tacos.domain.Ingredient;
 
