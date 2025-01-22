@@ -1,8 +1,10 @@
-package com.practice.tacos.repo;
+package com.practice.tacos.repo.impl;
 
 import com.practice.tacos.domain.Ingredient;
-import lombok.AllArgsConstructor;
+import com.practice.tacos.repo.IngredientRepository;
+import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.jdbc.core.JdbcOperations;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
@@ -14,10 +16,12 @@ import java.util.Optional;
 
 @Slf4j
 @Repository
-@AllArgsConstructor
-public class JdbcIngredientRepository implements IngredientRepository{
+@RequiredArgsConstructor
+public class JdbcIngredientRepository implements IngredientRepository {
 
-    private JdbcTemplate jdbcTemplate;
+    private final JdbcTemplate jdbcTemplate;
+
+    private final JdbcOperations jdbcOperations;
 
     @Override
     public Iterable<Ingredient> findAll() {
@@ -42,7 +46,16 @@ public class JdbcIngredientRepository implements IngredientRepository{
                 ingredient.getType().toString());
         return ingredient; //TODO this should be the resulted new ingredient in the db, not the one provided
     }
-//TODO verify this
+
+    public void saveIngredientRef(long tacoId, List<Ingredient> ingredients) {
+        for (Ingredient ingredient : ingredients) {
+            jdbcOperations.update(
+                    "insert into Ingredient_Ref (ingredient, taco) "
+                            + "values (?, ?)",
+                    ingredient, tacoId);
+        }
+    }
+
     private List<Ingredient> mapResultSetToIngredients(ResultSet resultSet) throws SQLException {
         List<Ingredient> ingredients = new ArrayList<>();
         if (resultSet.first()) {
