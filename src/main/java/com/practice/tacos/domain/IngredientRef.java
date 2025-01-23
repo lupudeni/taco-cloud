@@ -1,4 +1,4 @@
-package com.practice.tacos.domain.jdbc;
+package com.practice.tacos.domain;
 
 import lombok.Data;
 

@@ -1,7 +1,19 @@
 spring:
   application:
     name: taco-cloud
-  datasource:
-    generate-unique-name: false
-    name: tacocloud
-
+datasource:
+  url: jdbc:h2:mem:tacocloud  # or jdbc:h2:file:./data/taco-cloud for persistent
+  driver-class-name: org.h2.Driver
+  username: sa
+  password: # Leave empty unless you set a password for H2
+  generate-unique-name: false  # Don't auto-generate a unique name for the database
+  name: tacocloud  # Name of the datasource
+  h2:
+    console:
+      enabled: true
+      path: /h2-console
+  # Configure JPA/Hibernate settings
+  jpa:
+    hibernate:
+      ddl-auto: update  # Auto-create and drop schema on startup and shutdown
+    show-sql: true  # Optional: Enable to show SQL statements in the logs for debugging

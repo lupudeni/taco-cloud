@@ -1,4 +1,4 @@
-package com.practice.tacos.domain.jpa;
+package com.practice.tacos.domain;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
