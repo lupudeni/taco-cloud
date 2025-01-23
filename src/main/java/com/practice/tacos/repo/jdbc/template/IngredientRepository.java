@@ -1,6 +1,6 @@
 package com.practice.tacos.repo.jdbc.template;
 
-import com.practice.tacos.domain.Ingredient;
+import com.practice.tacos.domain.jdbc.Ingredient;
 
 import java.util.List;
 import java.util.Optional;

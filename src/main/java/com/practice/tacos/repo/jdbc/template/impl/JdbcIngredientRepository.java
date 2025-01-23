@@ -1,6 +1,6 @@
 package com.practice.tacos.repo.jdbc.template.impl;
 
-import com.practice.tacos.domain.Ingredient;
+import com.practice.tacos.domain.jdbc.Ingredient;
 import com.practice.tacos.repo.jdbc.template.IngredientRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;

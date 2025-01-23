@@ -1,9 +1,9 @@
 package com.practice.tacos.controller;
 
-import com.practice.tacos.domain.Ingredient;
-import com.practice.tacos.domain.Ingredient.Type;
-import com.practice.tacos.domain.Taco;
-import com.practice.tacos.domain.TacoOrder;
+import com.practice.tacos.domain.jdbc.Ingredient;
+import com.practice.tacos.domain.jdbc.Ingredient.Type;
+import com.practice.tacos.domain.jdbc.Taco;
+import com.practice.tacos.domain.jdbc.TacoOrder;
 import com.practice.tacos.service.DesignTacoService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;

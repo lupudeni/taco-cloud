@@ -1,6 +1,6 @@
 package com.practice.tacos.repo.jdbc.template.impl;
 
-import com.practice.tacos.domain.TacoOrder;
+import com.practice.tacos.domain.jdbc.TacoOrder;
 import com.practice.tacos.repo.jdbc.template.OrderRepository;
 import com.practice.tacos.repo.jdbc.template.TacoRepository;
 import lombok.RequiredArgsConstructor;

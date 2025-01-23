@@ -1,6 +1,6 @@
 package com.practice.tacos.mapping;
 
-import com.practice.tacos.domain.Ingredient;
+import com.practice.tacos.domain.jdbc.Ingredient;
 import com.practice.tacos.repo.jdbc.data.IngredientRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.core.convert.converter.Converter;
