@@ -1,8 +1,8 @@
 package com.practice.tacos.service;
 
 import com.google.common.collect.Lists;
-import com.practice.tacos.domain.jdbc.Ingredient;
-import com.practice.tacos.repo.jdbc.data.IngredientRepository;
+import com.practice.tacos.domain.jpa.Ingredient;
+import com.practice.tacos.repo.jpa.IngredientRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -12,9 +12,11 @@ import java.util.List;
 @RequiredArgsConstructor
 public class DesignTacoService {
 
-    // Used with JDBC Template package
-//    private final IngredientRepository ingredientRepository;
-
+    /**
+     * Default package and usage: JPA.
+     * The repo can be used with JDBC Template, JDBC Data or JPA.
+     * To switch, change the import packages.
+     */
     private final IngredientRepository ingredientRepository;
 
     public List<Ingredient> getAllIngredients(){

@@ -6,6 +6,7 @@ import com.practice.tacos.domain.jdbc.Taco;
 import com.practice.tacos.domain.jdbc.TacoOrder;
 import com.practice.tacos.service.DesignTacoService;
 import jakarta.validation.Valid;
+import lombok.AllArgsConstructor;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
@@ -20,7 +21,7 @@ import java.util.stream.Collectors;
 @Controller
 @RequestMapping("/design")
 @SessionAttributes("tacoOrder")
-@RequiredArgsConstructor
+@AllArgsConstructor
 public class DesignTacoController {
 
     private final DesignTacoService designTacoService;

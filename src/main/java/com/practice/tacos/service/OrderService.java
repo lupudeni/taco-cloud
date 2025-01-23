@@ -1,7 +1,7 @@
 package com.practice.tacos.service;
 
-import com.practice.tacos.domain.jdbc.TacoOrder;
-import com.practice.tacos.repo.jdbc.data.OrderRepository;
+import com.practice.tacos.domain.jpa.TacoOrder;
+import com.practice.tacos.repo.jpa.OrderRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -10,12 +10,9 @@ import org.springframework.stereotype.Service;
 public class OrderService {
 
     /**
-     * Used with JDBC Template package
-     */
-    //private final OrderRepository orderRepository;
-
-    /**
-     * Used with JDBC Data
+     * Default package and usage: JPA.
+     * The repo can be used with JDBC Template, JDBC Data or JPA. The domain packages also need to be adjusted in that case.
+     * To switch, change the import packages.
      */
     private final OrderRepository orderRepository;
 

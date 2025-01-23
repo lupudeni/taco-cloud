@@ -21,7 +21,7 @@ created_at timestamp not null
 create table if not exists Ingredient_Ref (
 id identity primary key,
 ingredient varchar(4) not null,
-taco bigint not null,
+taco bigint not null
 );
 
 create table if not exists Ingredient (
