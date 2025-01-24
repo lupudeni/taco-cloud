@@ -54,11 +54,11 @@ public class DesignTacoController {
     @PostMapping
     public String processTaco(@Valid Taco taco,  Errors errors, @ModelAttribute TacoOrder tacoOrder) {
         if(errors.hasErrors()) {
+            errors.getAllErrors().forEach(error -> log.error("Errors: " + error.getDefaultMessage()));
             return "design";
         }
 
-        tacoOrder.addTaco(taco);
-        log.info("Processing taco: {}", taco);
+        designTacoService.processTaco(taco, tacoOrder);
         return "redirect:/orders/current";
     }
 

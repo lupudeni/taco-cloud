@@ -5,18 +5,16 @@ import com.practice.tacos.repo.OrderRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.util.Date;
+
 @Service
 @RequiredArgsConstructor
 public class OrderService {
 
-    /**
-     * Default package and usage: JPA.
-     * The repo can be used with JDBC Template, JDBC Data or JPA.
-     * To switch, use OrderRepository from either repo.jdbc.data or repo.jdbc.template
-     */
     private final OrderRepository orderRepository;
 
     public TacoOrder saveOrder(TacoOrder tacoOrder) {
+        tacoOrder.setPlacedAt(new Date());
         return orderRepository.save(tacoOrder);
     }
 }

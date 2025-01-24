@@ -1,6 +1,7 @@
 package com.practice.tacos.mapping;
 
 import com.practice.tacos.domain.Ingredient;
+import com.practice.tacos.domain.IngredientUDT;
 import com.practice.tacos.repo.IngredientRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.core.convert.converter.Converter;
@@ -8,12 +9,14 @@ import org.springframework.stereotype.Component;
 
 @Component
 @RequiredArgsConstructor
-public class IngredientByIdConverter implements Converter<String, Ingredient> {
+public class IngredientUDTConverter implements Converter<String, IngredientUDT> {
 
     private final IngredientRepository ingredientRepository;
 
     @Override
-    public Ingredient convert(String id) {
-        return ingredientRepository.findById(id).orElse(null);
+    public IngredientUDT convert(String id) {
+        Ingredient ingredient = ingredientRepository.findById(id).orElse(null);
+
+        return ingredient != null ? new IngredientUDT(ingredient.getName(), ingredient.getType()) : null;
     }
 }
