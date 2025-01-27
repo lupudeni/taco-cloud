@@ -21,6 +21,7 @@ Before you begin, ensure you have the following installed:
 ## Setting Up Cassandra
 
 To set up Apache Cassandra using Docker:
+(run the cassandra-setup.sh or do the following steps)
 
 1. **Pull the Cassandra Docker Image**:
    docker pull cassandra:latest
