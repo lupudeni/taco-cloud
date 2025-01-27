@@ -11,8 +11,8 @@ This is a Spring Boot application for managing taco orders with a MongoDB databa
 - [Interacting with MongoDB](#interacting-with-mongodb)
 
 ## Prerequisites
-- Java 11 or newer
-- Maven or Gradle
+- Java 17 or newer
+- Maven
 - Docker (for MongoDB container)
 
 ## Setting Up MongoDB
