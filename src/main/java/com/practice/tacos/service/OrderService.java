@@ -14,11 +14,6 @@ import java.util.Date;
 @RequiredArgsConstructor
 public class OrderService {
 
-    /**
-     * Default package and usage: JPA.
-     * The repo can be used with JDBC Template, JDBC Data or JPA.
-     * To switch, use OrderRepository from either repo.jdbc.data or repo.jdbc.template
-     */
     private final OrderRepository orderRepository;
 
     public void processOrder(TacoOrder tacoOrder, SessionStatus sessionStatus) {

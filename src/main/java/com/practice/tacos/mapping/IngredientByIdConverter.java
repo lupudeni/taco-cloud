@@ -10,9 +10,6 @@ import org.springframework.stereotype.Component;
 @RequiredArgsConstructor
 public class IngredientByIdConverter implements Converter<String, Ingredient> {
 
-    // Used with JDBC Template package
-//    private final IngredientRepository ingredientRepository;
-
     private final IngredientRepository ingredientRepository;
 
     @Override

@@ -17,11 +17,6 @@ import java.util.List;
 @RequiredArgsConstructor
 public class DesignTacoService {
 
-    /**
-     * Default package and usage: JPA.
-     * The repo can be used with JDBC Template, JDBC Data or JPA.
-     * To switch, use IngredientRepository from either repo.jdbc.data or repo.jdbc.template
-     */
     private final IngredientRepository ingredientRepository;
 
     public List<Ingredient> getAllIngredients(){
