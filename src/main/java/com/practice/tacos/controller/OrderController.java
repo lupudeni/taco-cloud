@@ -32,10 +32,8 @@ public class OrderController {
         if(errors.hasErrors()) {
             return "orderForm";
         }
-        TacoOrder submittedOrder = orderService.saveOrder(tacoOrder);
-        log.info("Order submitted: {}", submittedOrder);
-        sessionStatus.setComplete();
 
+        orderService.processOrder(tacoOrder, sessionStatus);
         return "redirect:/";
     }
 }
