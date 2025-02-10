@@ -1,9 +1,11 @@
 package com.practice.tacos.controller;
 
 import com.practice.tacos.domain.TacoOrder;
+import com.practice.tacos.domain.User;
 import com.practice.tacos.service.OrderService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -26,11 +28,12 @@ public class OrderController {
     }
 
     @PostMapping
-    public String processOrder(@Valid TacoOrder tacoOrder, Errors errors, SessionStatus sessionStatus) {
+    public String processOrder(@Valid TacoOrder tacoOrder, Errors errors, SessionStatus sessionStatus, @AuthenticationPrincipal User user) {
         if(errors.hasErrors()) {
             return "orderForm";
         }
 
+        tacoOrder.setUser(user);
         orderService.processOrder(tacoOrder, sessionStatus);
         return "redirect:/";
     }
