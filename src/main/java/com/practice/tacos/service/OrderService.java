@@ -4,6 +4,7 @@ import com.practice.tacos.domain.TacoOrder;
 import com.practice.tacos.repo.OrderRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.support.SessionStatus;
 
@@ -25,5 +26,10 @@ public class OrderService {
 
     public TacoOrder saveOrder(TacoOrder tacoOrder) {
         return orderRepository.save(tacoOrder);
+    }
+
+    @PreAuthorize("hasRole('ADMIN')") //SpEL expression
+    public void deleteAllOrders() {
+        orderRepository.deleteAll();
     }
 }
