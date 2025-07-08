@@ -1,4 +1,4 @@
-package com.practice.tacos.controller;
+package com.practice.tacos.controller.rest;
 
 import com.practice.tacos.domain.Taco;
 import com.practice.tacos.service.TacoService;
@@ -13,7 +13,7 @@ import java.util.Optional;
 @RequestMapping(path="/api/tacos", produces="application/json")
 @CrossOrigin(origins="http://tacocloud:8080") //TODO move to a security filter chain
 @AllArgsConstructor
-public class TacoController {
+public class TacoRestController {
 
     private TacoService tacoService;
 
@@ -28,4 +28,11 @@ public class TacoController {
         return taco.map(value -> new ResponseEntity<>(value, HttpStatus.OK))
                 .orElseGet(() -> new ResponseEntity<>(null, HttpStatus.NOT_FOUND));
     }
+
+    @PostMapping(consumes = "application/json")
+    @ResponseStatus(HttpStatus.CREATED)
+    public Taco postTaco(@RequestBody Taco taco) {
+        return tacoService.postTaco(taco);
+    }
+
 }

@@ -26,4 +26,8 @@ public class TacoService {
     public Optional<Taco> getTacoById(@NotNull Long id) {
         return tacoRepository.findById(id);
     }
+
+    public Taco postTaco(@NotNull Taco taco) {
+       return tacoRepository.save(taco);
+    }
 }
